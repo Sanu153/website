@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.faq-heading {
+    color: rgb(97, 144, 180) !important;
+    font-size: 5rem;
+    font-weight: 800;
+    text-decoration: underline !important;
+    text-align: center;
+    color: transparent;
+    font-family: 'Kalnia', serif;
+    background-size: 300%;
+    background-clip: text;
+    background-position: left;
+    animation: changeGradient 6s linear infinite alternate;
+}
+
+.question:nth-child(1) {
+    border-top: none;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 1rem;
+    background-color: rgb(213, 234, 250);
+    color: black;
+}
+
+.question {
+    font-size: larger;
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    border-top: 1px solid !important;
+    justify-content: space-between;
+}
+
+.answer {
+    display: none;
+    padding: .5rem 1rem;
+    /* border-bottom: 1px solid; */
+}
+
+.question:last-child {
+    border-bottom: none;
+}
+
+.faq.active .answer {
+    display: block;
+}
+
+/** Handling Respoinsiveness */
+
+@media screen and (max-width : 435px) {
+    .faq-heading {
+        font-size: 4rem;
+    }
+
+    .faq-container {
+        width: 90%;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+}

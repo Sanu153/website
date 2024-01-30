@@ -1,0 +1,354 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.testimonials-section {
+    padding-block: 15rem;
+}
+
+.testimonials-container {
+    min-height: 40vh;
+    min-width: 100vw;
+    display: grid;
+    padding-block: 7rem;
+    place-content: center;
+    perspective: 100rem;
+    gap: 5rem;
+    position: relative;
+    /* margin-block: auto; */
+}
+
+.testimonials-heading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    /* color: rgba(255, 255, 255, 0.116);
+    background-image: linear-gradient(to right, hsl(196, 100%, 55%), rgb(177, 33, 255)); */
+    /* background-clip: text; */
+    color: rgb(97, 144, 180);
+    font-family: 'Kalnia', serif;
+}
+
+.testimonial {
+    padding: 2rem;
+    height: 70vh;
+    height: max-content;
+    width: 70vw;
+    position: sticky;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* box-shadow: 0 0 2rem .5rem gray, inset 0 0 2rem .5rem gray;
+    background-color: #ffffff53; */
+    background-color: hsla(0, 0%, 100%, 0.1);
+    border: 1px solid white;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5); */
+    box-shadow: 1rem 1rem 2rem 1rem hsla(0, 0%, 0%, 0.3);
+    transform-style: preserve-3d;
+    transform-origin: 20% 0%;
+    gap: 1rem;
+    animation: onScrollSkew linear forwards;
+    animation-timeline: view();
+    animation-range-start: contain 20vh;
+    animation-range-end: contain 90vh;
+    border-radius: 1rem;
+
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+}
+
+.testimonial::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* background-color: red; */
+    background-image: linear-gradient(to right, #360033, #0b8793);
+    filter: blur(40px);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.testimonial .image {
+    width: 30%;
+    margin: auto;
+    border-radius: 1rem;
+    border-top: .5px solid white;
+    border-left: .5px solid white;
+    box-shadow: -1rem -.5rem 2rem 10px rgba(0, 0, 0, 0.432), 0 0 3rem 1rem rgba(0, 0, 0, 0.432);
+}
+
+.testimonial img {
+    width: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.testimonial .heading {
+    font-size: 3rem;
+    margin-block: 2rem;
+}
+
+.heading .small {
+    font-size: large;
+}
+
+.testimonial .content {
+    opacity: 0;
+    width: 100%;
+    font-size: larger;
+    padding: 2rem;
+}
+
+.testimonials-container:hover .image {
+    width: 70%;
+    transition: width .5s ease-in-out;
+}
+
+.testimonials-container:hover .content {
+    opacity: 1;
+    transition: opacity, width .75s ease-in-out;
+}
+
+.testimonial .content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.team-details {
+    margin-top: 15%;
+    padding: 2rem;
+    height: 70vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    border: 1px solid white;
+    box-shadow: 1rem 1rem 2rem 1rem hsla(0, 0%, 0%, 0.3);
+    gap: 1rem;
+    border-radius: 1rem;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    margin-inline: auto;
+}
+
+.team-details .team-image {
+    padding: 2rem;
+    width: 50%;
+    height: 100%;
+    border-radius: 1em;
+}
+
+.team-details .team-image img {
+    width: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+.team-details .content {
+    width: 100%;
+    font-size: larger;
+}
+
+.team-details .content .heading {
+    font-size: 3rem;
+    margin-block: 2rem;
+}
+
+.people-details {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    top: 10%;
+    right: 3%;
+    width: max-content;
+    gap: 2rem;
+    z-index: 100;
+}
+
+.people-details .person {
+    width: 7vw;
+    border-radius: 1em;
+    aspect-ratio: 1/1;
+    z-index: -1;
+}
+
+.people-details .person a img {
+    scale: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1em;
+    animation: imagesDisplay .7s ease-in-out forwards;
+}
+
+@keyframes imagesDisplay {
+    from {
+        filter: blur(20px);
+        transform: translate(30%);
+        scale: 0;
+    }
+
+    to {
+        transform: translate(0);
+        scale: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes onScrollSkew {
+    from {
+        transform: rotateX(0deg) translateZ(30px);
+    }
+
+    to {
+        transform: rotateX(-60deg);
+        opacity: 0;
+    }
+}
+
+
+/** Handling Responsiveness */
+
+@media screen and (max-width : 1040px) {
+    .testimonial {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width : 775px) {
+    .testimonials-heading {
+        font-size: 4rem;
+    }
+
+    .testimonials-container {
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .testimonial {
+        width: 80%;
+        margin-inline: auto;
+        flex-direction: column;
+        position: static;
+        animation: none;
+        gap: 0;
+        height: max-content;
+    }
+
+    .testimonial .image {
+        width: 20%;
+    }
+
+    .testimonials-container:hover .image {
+        width: 40%;
+        transition: width .5s ease-in-out;
+    }
+
+    .testimonial img {
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .testimonial .heading {
+        font-size: 25px;
+        text-align: center;
+        height: max-content;
+    }
+
+    .testimonial .content {
+        font-size: 16px;
+        padding-block: 0;
+        padding-inline: 1rem;
+    }
+
+    .team-details {
+        width: 90%;
+    }
+
+    .team-details .content .heading {
+        font-size: 2rem;
+        text-align: center;
+        height: max-content;
+    }
+
+    .team-details .content .sodi {
+        font-size: 16px;
+        padding-block: 0;
+        padding-inline: 1rem;
+    }
+
+}
+
+@media screen and (max-width : 435px) {
+    .testimonials-heading {
+        font-size: 2.5rem;
+    }
+
+    .testimonials-section {
+        padding-block: 7rem;
+    }
+
+    .testimonial .image {
+        width: 60%;
+    }
+
+    .testimonials-container:hover .image {
+        width: 90%;
+    }
+
+    .team-details {
+        flex-direction: column;
+        height: max-content;
+        padding: 1rem;
+    }
+
+    .team-details .team-image {
+        width: 70%;
+        padding: 0;
+    }
+
+    .team-details .content {
+        margin-top: 7rem;
+    }
+
+    .people-details {
+        top: 50%;
+        width: 50%;
+        left: 25%;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width : 330px) {
+    .testimonials-heading {
+        font-size: 2rem;
+    }
+
+    .testimonials-container {
+        padding-inline: 0;
+    }
+
+    .testimonial {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .testimonial .content {
+        text-align: center;
+    }
+}

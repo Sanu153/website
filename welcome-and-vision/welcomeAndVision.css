@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.welcome-container,
+.vision-container {
+    display: flex;
+    gap: 5rem;
+    /* min-height: 100vh; */
+    margin-block: 10rem;
+    padding-inline: 6rem;
+}
+
+.welcome-container .text-container,
+.vision-container .text-container {
+    width: 100%;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 80ch;
+    text-align: center;
+}
+
+.welcome-container .image-container,
+.vision-container .image-container {
+    width: 100%;
+}
+
+
+.welcome-container .text-container .heading,
+.vision-container .text-container .heading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(97, 144, 180);
+    filter: drop-shadow(3px 3px 2px hsl(206, 36%, 24%));
+    background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, rgba(7, 52, 149, 1) 16%, rgba(5, 88, 173, 1) 33%, rgba(2, 171, 228, 1) 89%, rgba(1, 188, 239, 1) 98%, rgba(2, 169, 227, 1) 100%, rgba(1, 178, 233, 1) 100%);
+    background-clip: text;
+    font-family: 'Kalnia', serif;
+}
+
+.welcome-container .text-container .content,
+.vision-container .text-container .content {
+    display: inline;
+    font-size: x-large;
+    display: flex;
+    font-weight: 600;
+    color: rgb(213, 234, 250);
+    text-align: center;
+    background-image: linear-gradient(white, white);
+    background-clip: text;
+    background-size: 0%;
+    animation: textAnimation linear forwards;
+    animation-timeline: view();
+    animation-range-start: 10vh;
+    animation-range-end: contain 20vh;
+}
+
+.vision-container .image-container img,
+.welcome-container .image-container img {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    animation: slideFromLeft linear forwards;
+    animation-timeline: view();
+    animation-range-start: 30vh;
+    animation-range-end: cover 80vh;
+}
+
+
+.char {
+    /* width: 100%; */
+    text-align: center;
+    font-size: larger;
+    height: 40px;
+    animation: an 1s ease-out 1 both;
+    display: inline-block;
+}
+
+
+
+@keyframes an {
+    from {
+        opacity: 0;
+        transform: perspective(500px) translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(500px) translate3d(0, 0, 0);
+    }
+}
+
+
+@keyframes animate {
+    0% {
+        width: 10%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        left: -100%;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes textAnimation {
+    10% {
+        opacity: 1;
+        scale: 1.2;
+    }
+
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+        background-size: 100%;
+    }
+}
+
+/* Handling Responsiveness */
+
+@media screen and (max-width : 1040px) {
+
+    /** For welcomea and vision sections */
+    .welcome-container .text-container,
+    .vision-container .text-container {
+        gap: 2rem;
+    }
+
+    .welcome-container .text-container .heading,
+    .vision-container .text-container .heading {
+        font-size: 4rem;
+    }
+
+    .welcome-container .text-container .content,
+    .vision-container .text-container .content {
+        font-size: large;
+    }
+}
+
+@media screen and (max-width : 775px) {
+
+
+    .welcome-container .text-container,
+    .vision-container .text-container {
+        gap: 1rem;
+    }
+
+    .welcome-container .text-container .heading,
+    .vision-container .text-container .heading {
+        font-size: 3rem;
+    }
+
+    .welcome-container .text-container .content,
+    .vision-container .text-container .content {
+        font-size: 16px;
+    }
+
+    .vision-container .image-container,
+    .welcome-container .image-container {
+        display: grid;
+        place-content: center;
+    }
+}
+
+@media screen and (max-width : 435px) {
+
+    .welcome-container,
+    .vision-container {
+        flex-direction: column;
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width : 330px) {
+
+    .welcome-container,
+    .vision-container {
+        margin-block: 7rem;
+        padding: 0;
+        gap: 0;
+    }
+
+    .vision-container .image-container,
+    .welcome-container .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome-container .text-container .content {
+        width: 90%;
+    }
+}

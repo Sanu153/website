@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@500&display=swap');
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        canvas {
+            display: block;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-color: black;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .thank-you {
+            max-width: max-content;
+            margin: auto;
+        }
+
+        .thank-you #thank-you-heading span {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            position: relative;
+            letter-spacing: 2px;
+            font-family: 'Kalnia', serif;
+        }
+
+        p {
+            font-size: 1.2em;
+            /* color: #666; */
+        }
+
+        .tip {
+            margin-top: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+        }
+
+        #thank-you-info,
+        #tipContent {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            display: inline-block;
+            border-right: 2px solid #333;
+            /* simulate cursor */
+            padding-right: 5px;
+            /* adjust space after cursor */
+            animation: cursor 1s infinite;
+        }
+
+        #thank-you-heading span {
+            color: white;
+            scale: 0;
+            text-transform: uppercase;
+            animation: fade-in-and-out 3s linear infinite forwards;
+        }
+
+        #thank-you-heading span:last-of-type {
+            animation: blink .5s linear infinite forwards;
+        }
+
+        .empty {
+            display: inline;
+        }
+
+        @keyframes fade-in-and-out {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes cursor {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+    <link rel="shortcut icon" href="poditivity-logo.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="thank-you">
+            <h1 id="thank-you-heading">
+                <span>T</span>
+                <span>h</span>
+                <span>a</span>
+                <span>n</span>
+                <span>k</span>
+                <div class="empty"></div>
+                <span>Y</span>
+                <span>o</span>
+                <span>u</span>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                <span>!</span>
+            </h1>
+            <p id="thank-you-info">Thank you for subscribing to Poditivityconnect. We are still in development.</p>
+            <div class="tip">
+                <h2>TIP:</h2>
+                <p id="tipContent"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.createElement('canvas');
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const stars = [];
+            const starCount = 100;
+
+            for (let i = 0; i < starCount; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 3 + 1,
+                    speed: Math.random() * 2 + 1,
+                    color: 'blue',
+                    angle: Math.PI / 2.3  // 45 degrees in radians
+                });
+            }
+
+            const dots = document.querySelectorAll('#thank-you-heading span');
+            dots.forEach((dot, i) => {
+                dot.style.animationDelay = `${i * .05}s`
+            })
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                for (let i = 0; i < starCount; i++) {
+                    const star = stars[i];
+
+                    ctx.fillStyle = star.color;
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
+                    ctx.fill();
+
+                    star.x += star.speed * Math.cos(star.angle);
+                    star.y += star.speed * Math.sin(star.angle);
+
+                    if (star.x > canvas.width || star.y > canvas.height) {
+                        star.x = Math.random() * canvas.width;
+                        star.y = -star.size;
+                    }
+                }
+
+                requestAnimationFrame(draw);
+            }
+
+            draw();
+
+            window.addEventListener('resize', function () {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tips = [
+                "Stay positive!",
+                "Enjoy the journey.",
+                "Take breaks for better productivity.",
+                "Smile often!",
+                "Keep learning and growing.",
+                "Share positivity with others.",
+                "Take care of yourself.",
+            ];
+
+            // Randomly select a tip on page load
+            const tipContent = document.getElementById('tipContent');
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            tipContent.textContent = tips[randomIndex];
+        });
+    </script>
+</body>
+
+</html>

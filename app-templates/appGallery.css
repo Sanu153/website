@@ -1,0 +1,109 @@
+.app-library-section {
+    min-height: 120vh;
+}
+
+.app-library-heading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10rem;
+    color: rgb(97, 144, 180);
+    font-family: 'Kalnia', serif;
+}
+
+#carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 30vw);
+    place-content: center;
+    align-content: center;
+}
+
+#carousel img {
+    width: 50%;
+    margin: auto;
+    position: relative;
+    left: 0;
+}
+
+#carousel img:first-child {
+    --movement: -5vw;
+    width: 40%;
+    animation: move .4s linear;
+}
+
+#carousel img:nth-child(2) {
+    --movement: -5vw;
+    width: 50%;
+    animation: move .4s linear;
+}
+
+#carousel img:last-child {
+    --movement: -5vw;
+    width: 40%;
+    animation: move .4s linear;
+}
+
+@keyframes move {
+    from {
+        left: 10%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.buttons-link {
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.buttons-link .app-button:hover {
+    scale: 1.2;
+    transition: scale .3s linear;
+}
+
+@media screen and (max-width : 775px) {
+    #carousel img:nth-child(2) {
+        width: 80%;
+    }
+    #carousel img:nth-child(1) {
+        width: 60%;
+    }
+    #carousel img:nth-child(3) {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width : 435px) {
+    
+    .app-library-heading {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    #carousel {
+        grid-template-columns: repeat(3 , 50vw);
+    }
+    
+    #carousel img:nth-last-of-type(2) {
+        width: 100%;
+    }
+    #carousel img:nth-last-of-type(1) {
+        width: 80%;
+    }
+    #carousel img:nth-last-of-type(3) {
+        width: 80%;
+    }
+
+    .buttons-link {
+        flex-direction: column;
+    }
+
+
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="registeration.css">
+    <script defer="" src="registration.js"></script>
+    <link rel="shortcut icon" href="poditivity-logo.png">
+</head>
+
+
+<body>
+    <canvas id="test"></canvas>
+    <header class="header">
+        <div class="header-input" id="studentContainer">
+            <img src="student.png" class="student-image images" alt="" id="studentImage">
+            <div class="student-container">
+                <span>Student</span>
+                <label>
+                    <input value="student" name="checkboxGroup" type="checkbox" class="bubble" id="student"
+                        title="Student Form" onclick="handleCheckboxClick('student')">
+                </label>
+            </div>
+        </div>
+        <hr>
+        <div class="header-input" id="institutionContainer">
+            <img src="university.png" class="institution-image images" alt="" id="institutionImage">
+            <div class="institute-container">
+                <span>Institution</span>
+                <label>
+                    <input value="institution" name="checkboxGroup" type="checkbox" class="bubble" id="institution"
+                        title="Institution Form" onclick="handleCheckboxClick('institution')">
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <div class="choosing-text">
+        Choose The Appropriate Option Above
+    </div>
+    <div class="form-container">
+        <div class="student-form-container">
+            <form class="student-form  form-group" action="" method="post">
+                <div class="label first-name">
+                    <div>First Name <span>*</span> </div>
+                    <input type="email" name="firstName" title="First Name" required placeholder="e.g. Something">
+                </div>
+                <div class="label last-name">
+                    <div>Last Name <span>*</span> </div>
+                    <input type="text" name="lastName" title="Last Name" required placeholder="e.g. Ashish">
+                </div>
+                <div class="label email">
+                    <div>Email <span>*</span> </div>
+                    <input type="email" name="email" title="Email" required placeholder="e.g. something@gmail.com">
+                </div>
+                <div class="label moblie">
+                    <div>Mobile No. <span>*</span> </div>
+                    <input type="text" name="mobile" title="Mobile No." required placeholder="e.g. 00000-00000">
+                </div>
+                <div class="label create-password">
+                    <div>Create a Password<span>*</span> </div>
+                    <input type="password" name="enterPass" title="Create a strong Password" required
+                        placeholder="e.g. create a strong password">
+                </div>
+                <div class="label reenter-password">
+                    <div>Re-enter the Password<span>*</span> </div>
+                    <input type="password" name="reenterPass" title="Re-enter the Password" required placeholder="">
+                </div>
+                <div class="label terms&condition">
+                    <input type="checkbox" style="height: 20px;width: 20px;" required title="Terms & Conditions"><span>*Terms &
+                        Condition</span>
+                </div>
+                <div class="label empty-div"></div>
+                <div class="submit">
+                    <input type="submit" value="Submit" onclick="openNewPage()">
+                </div>
+            </form>
+        </div>
+
+        <div class="institution--container">
+            <form class="institution-form  form-group" action="#" method="post">
+                <div class="label institute-name">
+                    <div>Institute Name <span>*</span> </div>
+                    <input type="email" name="instituteName" title="Institute Name" required
+                        placeholder="e.g. Oxford University">
+                </div>
+                <div class="label institute-email">
+                    <div>Institute Email <span>*</span> </div>
+                    <input type="text" name="instituteEmail" title="Institute Email" required
+                        placeholder="e.g. something@institute.in">
+                </div>
+                <div class="label institute-city">
+                    <div>Institute City <span>*</span> </div>
+                    <input type="text" name="instituteCity" title="Institute City" required placeholder="e.g. Warangal">
+                </div>
+                <div class="label institute-state">
+                    <div>Institute State <span>*</span> </div>
+                    <input type="text" name="instituteState" title="Institute State" required
+                        placeholder="e.g. Telangana">
+                </div>
+                <div class="label moblie">
+                    <div>Institute Mobile <span>*</span> </div>
+                    <input type="tel" name="mobile" title="Mobile No." required placeholder="e.g. 00000-00000">
+                </div>
+                <div class="label dean-email">
+                    <div>Dean Email <span>*</span> </div>
+                    <input type="email" name="deanEmail" title="Dean Email" required
+                        placeholder="e.g. something@gmail.com">
+                </div>
+                <!-- <div class="label empty-div"></div> -->
+                <div class="label create-password">
+                    <div>Create a Password<span>*</span> </div>
+                    <input type="password" name="enterPass" title="Create a strong Password" required
+                        placeholder="e.g. create a strong password">
+                </div>
+                <div class="label reenter-password">
+                    <div>Re-enter the Password<span>*</span> </div>
+                    <input type="password" name="reenterPass" title="Re-enter the Password" required
+                        placeholder="Re-enter the Password">
+                </div>
+                <div class="label terms&condition">
+                    <input type="checkbox" name="reenterPass" style="height: 20px;width: 20px;" required title="Terms & Conditions"><span>*Terms &
+                        Condition</span>
+                </div>
+                <div class="label empty-div"></div>
+                <div class="submit">
+                    <input type="submit" value="Submit" onclick="openNewPage()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    </script>
+</body>
+
+</html>

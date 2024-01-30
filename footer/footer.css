@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    /* position: absolute;
+    bottom: 0; */
+    margin-top: auto;
+    background-color: rgb(213, 234, 250);
+}
+
+.footer-container {
+    position: relative;
+    min-height: 40vh;
+    display: flex;
+    background-color: rgb(213, 234, 250);
+}
+
+marquee {
+    font-size: 4rem;
+    background: rgb(213, 234, 250);
+    color: #1d2d3d;
+    padding: 2rem;
+}
+
+.socials {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-block: .5rem;
+}
+
+.apps-buttons {
+    /* position: absolute; */
+    margin-left: 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.apps-buttons .heading {
+    font-size: larger;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.socials .content {
+    border-top: 1px solid;
+    padding: .5rem;
+}
+
+.tagline {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    margin-right: 4rem;
+    font-size: 3rem;
+    font-family: 'Gabriela', serif;
+}
+
+.tagline div:last-child {
+    margin-left: 5rem;
+}
+
+.icons-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.icons-container div {
+    scale: 2;
+}
+
+.icons-container div a {
+    /* color: white; */
+    color: black;
+}
+
+.contact-us {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 5rem;
+}
+
+.contact-us .heading {
+    font-size: larger;
+    font-weight: 700;
+}
+
+.mail-heading {
+    font-size: larger;
+    font-weight: 700;
+}
+
+.address {
+    font-size: larger;
+    display: flex;
+    gap: 1rem;
+}
+
+.address .one {
+    border-right: 1px solid;
+    padding-inline: 1rem;
+}
+
+.mail {
+    font-size: larger;
+    color: blue;
+}
+
+.contribution {
+    position: absolute;
+    bottom: 10%;
+    left: 75%;
+}
+
+.footer-image {
+    position: absolute;
+    left: 1%;
+    bottom: 5%;
+    width: 3vw;
+    height: 3vw;
+    margin-inline: auto;
+}
+
+.footer-image img {
+    width: 100%;
+}
+
+
+@media screen and (max-width : 1040px) {
+    .contact-us {
+        margin-left: 2rem
+    }
+
+    .tagline {
+        margin-right: 0;
+    }
+
+    .tagline {
+        font-size: 30px;
+        font-weight: bolder
+    }
+
+    .tagline div {
+        margin-left: 0;
+    }
+
+    .apps-buttons {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+
+    .contribution {
+        bottom: 20%;
+    }
+}
+
+@media screen and (max-width : 775px) {
+
+    .footer-container {
+        min-height: 50vh;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .contact-us {
+        margin-left: 0;
+        gap: 0;
+    }
+
+    .contact-us .heading,
+    .contact-us .mail-heading {
+        font-size: 18px;
+    }
+
+    .address,
+    .mail {
+        font-size: 16px;
+    }
+
+    .apps-buttons {
+        margin-bottom: 20%;
+        margin-left: 5%;
+    }
+
+    .contribution {
+        left: 50%;
+        bottom: 35%;
+    }
+
+    .footer-image {
+        width: 5vw;
+        aspect-ratio: 1/1;
+        bottom: 35%;
+        left: 2%;
+    }
+}
+
+@media screen and (max-width : 435px) {
+    .footer-container {
+        min-height: 70vh;
+        flex-direction: column;
+    }
+
+    .contact-us {
+        margin-inline: auto;
+        gap: 1rem;
+    }
+
+    .apps-buttons {
+        margin-inline: auto;
+        margin-bottom: 30%;
+    }
+
+    .apps-buttons div:nth-child(2) {
+        padding-left: 25%;
+    }
+
+    .contribution {
+        bottom: 20%;
+        left: 20%;
+    }
+
+    .socials {
+        margin-block-end: 1rem;
+    }
+
+    .icons-container {
+        bottom: -25%;
+    }
+
+    .footer-image {
+        width: 9vw;
+        left: 3%;
+        bottom: 20%;
+    }
+
+    marquee {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width : 380px) {
+    .apps-buttons {
+        margin-inline: auto;
+        margin-bottom: 40%;
+    }
+}
+
+@media screen and (max-width : 330px) {
+    .apps-buttons div:nth-child(2) {
+        padding-left: 20%;
+    }
+
+    .apps-buttons {
+        margin-inline: auto;
+        margin-bottom: 45%;
+    }
+
+    .contribution {
+        bottom: 20%;
+        left: 10%;
+    }
+}

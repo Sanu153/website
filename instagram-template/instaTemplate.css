@@ -1,0 +1,33 @@
+.insta-template {
+    height: max-content;
+    width: 30%;
+    overflow: hidden;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    /* border: 1px solid yellow; */
+}
+
+.Caption {
+    display: none !important;
+}
+
+/** Handling Responsiveness */
+@media screen and (max-width : 775px) {
+    .insta-template {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width : 435px) {
+    .insta-template {
+        width: 90%;
+    }
+}
+@media screen and (max-width : 385px) {
+    .insta-template {
+        width: 90%;
+    }
+}

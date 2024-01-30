@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100vw;
+}
+
+nav {
+    width: 100vw;
+    position: sticky;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between;
+    background-color: rgb(213, 234, 250);
+    padding: .25rem 1rem;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+nav .logo img {
+    width: 50px;
+    filter: drop-shadow(1px 1px 2px #68bcdc);
+}
+
+nav .logo-name {
+    font-size: x-large;
+    font-weight: 1000;
+    color: #68bcdc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav .items-container ul {
+    display: flex;
+    align-items: center !important;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav .items-container ul li {
+    padding: .5rem;
+    font-size: large;
+    font-weight: bolder;
+    border-radius: .5rem;
+}
+
+nav .items-container ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav .items-container ul li:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #68bcdc;
+}
+
+nav .items-container ul li:hover a {
+    color: #3d97cf;
+}
+
+.button {
+    padding: .5em 1em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #2c9caf;
+    transition: all 1000ms;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid #2c9caf;
+}
+
+button:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    outline: 2px solid #70bdca;
+    box-shadow: 4px 5px 17px -4px #268391;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #2c9caf;
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+button:hover::before {
+    width: 250%;
+}
+
+button a {
+    text-decoration: none;
+    color: black;
+}
+
+/** Handling Responsiveness */
+@media screen and (max-width : 775px) {
+    nav {
+        flex-wrap: nowrap;
+    }
+
+    nav .items-container ul {
+        gap: 0;
+    }
+
+    nav .items-container ul li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width : 435px) {
+    nav {
+        width: 100vw;
+    }
+
+    nav .items-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 330px) {
+
+    .button {
+        padding: 7px 15px;
+    }
+
+    nav .logo img {
+        width : 40px;
+    }
+
+    nav .logo-name {
+        font-size: 20px;    
+    }
+
+}
